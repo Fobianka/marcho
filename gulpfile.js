@@ -2,7 +2,6 @@ const {src, dest, watch, parallel, series} = require('gulp');
 
 const scss   = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
-
 const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
@@ -11,9 +10,6 @@ const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
-const fonter = require('gulp-fonter');
-const ttf2woff2 = require('gulp-ttf2woff2');
-// const svgSprite = require('gulp-svg-sprite');
 const include = require('gulp-include');
 
 function pages() {
@@ -23,16 +19,6 @@ function pages() {
     }))
     .pipe(dest('app'))
     .pipe(browserSync.stream())
-}
-
-function fonts() {
-  return src('app/fonts/src/*.*')
-    .pipe(fonter({
-      formats: ['woff', 'ttf']
-    }))
-    .pipe(src('app/fonts/*.ttf'))
-    .pipe(ttf2woff2())
-    .pipe(dest('app/fonts'))
 }
 
 function images(){
@@ -50,19 +36,6 @@ function images(){
 
     .pipe(dest('app/images'))
 }
-
-// function sprite () {
-//   return src('app/images/*.svg')
-//     .pipe(svgSprite({
-//       mode: {
-//         stack: {
-//           sprite: '../sprite.svg',
-//           example: true 
-//         }
-//       }
-//     }))
-//     .pipe(dest('app/images'))
-// }
 
 function scripts() {
   return src([
@@ -106,10 +79,8 @@ function cleanDist() {
 function building() {
   return src([
     'app/css/style.min.css',
+    'app/fonts/**/*',
     'app/images/**/*.*',
-    // '!app/images/*.svg',
-    // 'app/images/sprite.svg',
-    'app/fonts/*.*',
     'app/js/main.min.js',
     'app/**/*.html',
   ], {base : 'app'})
@@ -118,10 +89,8 @@ function building() {
 
 exports.styles = styles;
 exports.images = images;
-exports.fonts = fonts;
 exports.pages = pages;
 exports.building = building;
-// exports.sprite = sprite;
 exports.scripts = scripts;
 exports.watching = watching;
 
