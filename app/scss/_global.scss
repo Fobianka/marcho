@@ -27,4 +27,8 @@ body {
 body{
   min-height: 100vh;
   min-width: 320px;
+  font-size: 16px;
+  line-height: 26px;
+  @extend %quick-500;
+  color: $main-color;
 }
