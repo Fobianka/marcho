@@ -25,3 +25,19 @@ body{
   @extend %quick-500;
   color: $main-color;
 }
+
+.title {
+  @extend %roboto-700;
+  font-size: 48px;
+  line-height: 65px;
+  color: $title-color;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.text{
+  max-width: 570px;
+  text-align: center;
+  margin: 0 auto 55px;
+}
