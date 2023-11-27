@@ -2,6 +2,7 @@ $main-color: #8d8d8d;
 $title-color: #29282d;
 $accent-color: #fe3e57;
 $bg-color: #f6f6f6;
+$hover-accent: #34c3ff;
 
 
 
@@ -35,4 +36,12 @@ $bg-color: #f6f6f6;
 %roboto-700{
   font-family: 'Roboto-Bold', sans-serif;
   font-weight: 700;
+}
+
+%btn{
+  @extend %roboto-400;
+  background-color: $accent-color;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 12px 25px;
 }
