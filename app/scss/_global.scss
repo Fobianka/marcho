@@ -41,3 +41,20 @@ body{
   text-align: center;
   margin: 0 auto 55px;
 }
+
+.product__link,
+.promo__btn{
+  @extend %roboto-400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $title-color;
+  background-color: #fff;
+  border: 1px solid $accent-color;
+  padding: 14px 27px 12px 27px;
+  transition: border-color .3s ease-in;
+  &:focus,
+  &:hover,
+  &:active{
+    border-color: $hover-accent;
+  }
+}
