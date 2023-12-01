@@ -414,6 +414,144 @@
   margin-bottom: 55px;
 }
 
+.product {
+  text-align: center;
+  padding: 105px 0 120px;
+}
+.product__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 45px 30px;
+}
+.product-item {
+  max-width: 370px;
+  text-align: center;
+}
+.product-item__img-box {
+  position: relative;
+  height: 370px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.product-item--sale{
+  .product-item__img-box::before{
+    content: 'SALE';
+    position: absolute;
+    @extend %btn;
+    top: 25px;
+    left: 25px;
+    padding: 7px 10px 5px 10px;
+    line-height: 1;
+  }
+}
+.product-item__img {
+  object-fit: cover;
+}
+.product-item__link-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  background-color: #fff;
+  box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+  border-radius: 23px;
+  width: 220px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transform: translateY(300%);
+  transition: transform .3s ease-in;
+}
+.product-item:focus,
+.product-item:hover,
+.product-item:active{
+  .product-item__link-box{
+    transform: translateY(0);
+  }
+}
+.product-item__link {
+  display: inherit;
+  path{
+    transition: fill .3s ease-in;
+  }
+  &:focus,
+  &:hover,
+  &:active{
+    path{
+      fill: $accent-color;
+    }
+  }
+}
+.product-item__link--line{
+  padding-left: 25px;
+  padding-right: 25px;
+  position: relative;
+  &::before,
+  &::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background-color: #ececec;
+    top: -4px;
+  }
+  &::before{
+    left: 0;
+  }
+  &::after{
+    right: 0;
+  }
+}
+.star {
+  margin: 0 auto;
+}
+.product-item__title {
+  @extend %roboto-400;
+  font-size: 22px;
+  color: $title-color;
+  padding: 15px 0 20px;
+  transition: color .3s ease-in;
+  &:focus,
+  &:hover,
+  &:active{
+    color: $accent-color;
+  }
+}
+.product-item__price {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  @extend %roboto-400;
+}
+.product-item__price-new {
+  color: $title-color;
+}
+.product-item__price-old {
+  color: #ccccce;
+  text-decoration: line-through;
+}
+.product__link {
+  @extend %roboto-400;
+  display: inline-block;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $title-color;
+  background-color: #fff;
+  border: 1px solid $accent-color;
+  padding: 15px 25px 13px 25px;
+  margin-top: 55px;
+  transition: border-color .3s ease-in;
+  &:focus,
+  &:hover,
+  &:active{
+    border-color: $hover-accent;
+  }
+}
+
+
+
 
 
 
