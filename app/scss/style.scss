@@ -446,6 +446,7 @@
 }
 .product-item__img {
   object-fit: cover;
+  border: 1px solid #ececec;
 }
 .product-item__link-box {
   position: absolute;
@@ -588,6 +589,106 @@
   align-items: center;
   gap: 30px;
 }
+
+.blog {
+  padding: 50px 0 160px;
+  background-image: url('../images/decor/blog-bg.svg');
+  @extend %bg;
+  background-size: auto
+}
+.blog__items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    right: -23px;
+    top: -31px;
+    width: 126px;
+    height: 53px;
+    z-index: -1;
+    background-image: url('../images/decor/blog-decor.svg');
+  }
+}
+.blog__item {
+  max-width: 370px;
+  border: 1px solid #ececec;
+  transition: all .3s ease-in;
+  &:focus,
+  &:hover,
+  &:active{
+    box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+    border: none;
+    .blog__item-link{
+      color: $accent-color;
+      &::after{
+        background-image: url('../images/icons/arrow-hover.svg');
+      }
+    }
+  }
+}
+.blog__item-imglink {
+  display: block;
+  img{
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.blog__item-box{
+  padding: 30px 40px;
+}
+.blog__item-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.blog__item-author,
+.blog__item-date {
+  padding-left: 30px;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 4px;
+  }
+}
+.blog__item-author::before{
+  background-image: url('../images/icons/user-grey.svg');
+}
+.blog__item-date::before {
+  background-image: url('../images/icons/clock.svg');
+}
+.blog__item-title {
+  @extend %roboto-400;
+  font-size: 22px;
+  color: $title-color;
+  margin-bottom: 20px;
+}
+.blog__item-link {
+  padding-right: 15px;
+  position: relative;
+  transition: color .3s ease-in;
+  &::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    right: 0;
+    bottom: 8px;
+    background-image: url('../images/icons/arrow.svg');
+  }
+}
+
+
+
+
 
 
 
