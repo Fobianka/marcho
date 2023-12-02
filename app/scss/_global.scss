@@ -81,6 +81,7 @@ body{
     padding-right: 23px;
     margin-right: 15px;
     position: relative;
+    text-transform: capitalize;
     &::after{
       content: '';
       position: absolute;
