@@ -36,6 +36,13 @@ body{
   margin-bottom: 10px;
 }
 
+.title-text{
+  @extend %roboto-500;
+  font-size: 22px;
+  line-height: 26px;
+  color: $title-color;
+}
+
 .text{
   max-width: 570px;
   text-align: center;
