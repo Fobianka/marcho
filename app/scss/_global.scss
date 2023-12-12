@@ -49,10 +49,6 @@ body{
   margin: 0 auto 55px;
 }
 
-.header--404-page{
-  background-color: $bg-color;
-}
-
 .product__link,
 .promo__btn{
   @extend %roboto-400;
