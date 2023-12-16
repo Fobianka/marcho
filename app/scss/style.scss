@@ -13,6 +13,9 @@
   align-items: center;
   gap: 15px;
 }
+.menu__btn{
+  display: none;
+}
 .menu__list {
   display: flex;
   gap: 35px;
@@ -134,9 +137,11 @@
   margin-left: 5px;
 }
 .footer-bottom {
+  min-height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   font-size: 12px;
   gap: 30px;
   padding-top: 25px;
@@ -529,6 +534,7 @@
 }
 
 .product-item__img {
+  height: inherit;
   object-fit: cover;
   border: 1px solid #ececec;
 }
@@ -670,7 +676,7 @@
   padding-top: 75px;
 }
 .partners__list {
-  height: 170px;
+  min-height: 170px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -876,6 +882,9 @@
   display: flex;
   gap: 30px;
 }
+.shop__filter-btn{
+  display: none;
+}
 .shop__filters {
   width: 370px;
 }
@@ -902,7 +911,7 @@
   border: none;
   color: $title-color;
   background-color: $bg-color;
-  padding: 0 5px 0 15px;
+  padding: 0 15px;
 }
 .filter-search__btn {
   width: 50px;
@@ -1096,12 +1105,15 @@
   }
 }
 
+
+
 .shop-content{
   width: 100%;
   &__inner{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 10px;
     border-bottom: 1px solid #ececec;
     .product-item{
       margin-bottom: 40px;
@@ -1292,6 +1304,7 @@
     margin-bottom: 30px;
     label{
       margin-right: 10px;
+      margin-bottom: 5px;
       display: inline-block;
     }
   }
@@ -1324,6 +1337,7 @@
   margin-bottom: 25px;
   &__item{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 5px;
   }
@@ -1658,7 +1672,6 @@
       border-radius: 50%;
       border: none;
       box-shadow: 0px 7px 20px 0px rgba(254, 62, 87, 0.3);
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1882,7 +1895,9 @@
   &__box{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 25px 0 35px;
+    gap: 20px;
   }
   &__tags,
   &__share{
@@ -2004,7 +2019,7 @@
     }
   }
   &__form{
-    width: 100%;
+    max-width: 100%;
     padding: 60px 40px;
     box-shadow: 0px 10px 40px 0px rgba(172, 172, 172, 0.3);
   }
@@ -2048,21 +2063,6 @@
     padding: 18px 30px 16px 30px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @import 'media';

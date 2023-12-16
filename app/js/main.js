@@ -1,5 +1,19 @@
 $(function () {
 
+  $('.menu__btn').on('click', function() {
+    $('.menu__list').toggleClass('menu__list--active');
+  });
+
+  $('.shop__filter-btn').on('click', function (){
+    $('.shop__filters').slideToggle();
+  });
+
+  $('.footer-top__title-dropdown').on('click',function () {
+    $(this).next().slideToggle();
+    $(this).toggleClass('footer-top__list--active');
+  });
+
+
   $('.blog-page__slider').slick({
     prevArrow: '<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="5" height="10"><path d="M.015 4.97a.745.745 0 01.178-.49L3.934.2a.548.548 0 01.863 0 .762.762 0 010 .98L1.486 4.97l3.31 3.79a.776.776 0 010 .99.56.56 0 01-.862 0L.193 5.47a.772.772 0 01-.178-.5zm0 0" fill-rule="evenodd"/></svg></button>',
     nextArrow: '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="5" height="10"><path d="M5 4.99a.816.816 0 00-.17-.5L1.06.2a.556.556 0 00-.87 0 .771.771 0 000 .99l3.33 3.8-3.33 3.8a.771.771 0 000 .99.568.568 0 00.87 0l3.77-4.3A.715.715 0 005 4.99zm0 0" fill-rule="evenodd"/></svg></button>',
@@ -29,7 +43,16 @@ $(function () {
     asNavFor: '.oneproduct-slide__thumb',
     draggable: false,
     arrows: false,
-    fade: true
+    fade: true,
+    responsive: [
+      {
+        breakpoint: 1051,
+        settings: {
+          autoplay: true,
+          draggable: true
+        }
+      },
+    ]
   });
 
   $('.shop-content__filter-btn').on('click', function () {
@@ -39,10 +62,12 @@ $(function () {
 
   $('.button-list').on('click', function() {
     $('.product-item').addClass('product-item--list');
+    $('.shop-content__inner').addClass('shop-content__nogrid');
   });
 
   $('.button-grid').on('click', function() {
     $('.product-item').removeClass('product-item--list');
+    $('.shop-content__inner').removeClass('shop-content__nogrid');
   });
   
   $('.select-style, .oneproduct-item__num').styler();

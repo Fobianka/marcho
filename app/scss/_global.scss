@@ -69,6 +69,7 @@ body{
 .breadcrumbs{
   display: inline-flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding-left: 25px;
   position: relative;
   &::before{
@@ -128,7 +129,7 @@ body{
       position: absolute;
       width: 5px;
       height: 10px;
-      bottom: 8px;
+      bottom: 5px;
     }
   }
   &__prev{
@@ -143,6 +144,39 @@ body{
     &::before{
       background-image: url('../images/icons/angle-right.svg');
       right: 0;
+    }
+  }
+}
+
+
+@media (max-width: 1200px){
+  .title{
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+@media (max-width: 860px){
+  .title{
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+
+@media (max-width: 510px){
+  .title{
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .pagination{
+    gap: 30px;
+  }
+}
+
+@media (max-width: 350px){
+  .pagination{
+    &__arrow{
+      display: none;
     }
   }
 }
